@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ## Colors
+
+### Primary */
+:root{
+      --Red: hsl(0, 78%, 62%);
+      --Cyan: hsl(180, 62%, 55%);
+      --Orange: hsl(34, 97%, 64%);
+      --Blue: hsl(212, 86%, 64%);
+
+/* ### Neutral */
+
+      --Grey-500: hsl(234, 12%, 34%);
+      --Grey-400: hsl(212, 6%, 44%);
+      --White: hsl(0, 0%, 100%);
+}
+
+
+/* 1. Reset base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+/* 2. Imposta font base e altezza riga */
+body {
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg-color, white);
+  color: var(--text-color, black);
+}
+
+/* 3. Rimuove decorazioni inutili */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 4. Rende immagini e video reattivi */
+img,
+picture,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5. Disabilita il default degli input */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* 6. Disabilita lista marker */
+ul,
+ol {
+  list-style: none;
+  /* list-style-position: inside; */
+}
+
+
+
+/* MIO STILE MOBILE */
+
+
+      *{
+            font-family: "Poppins", sans-serif;
+      }
+
+      body{
+            padding: 2rem;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 2rem;
+      }
+
+
+      header{
+            display: flex;
+            flex-direction: column;
+      }
+
+      .header__subtitle{
+            text-align: center;
+
+            font-size: 1.5rem;
+
+            color: var(--Grey-400);
+
+            font-weight: 300;
+      }
+
+      .header__title{
+            text-align: center;
+
+            font-size: 1.5rem;
+
+            color: var(--Grey-500);
+      }
+
+      .header__description{
+            text-align: center;
+
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+
+            color: var(--Grey-400);
+      }
+
+      main{
+            
+            display: flex;
+            gap: 2rem;
+
+            flex-direction: column;
+      }
+
+      .card{
+            min-height: 10rem;
+            padding: 2rem 2rem 3.5rem 2rem;
+
+
+            box-shadow: 0px 5px 20px 0.1px rgba(125, 151, 185, 0.4);
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            gap: 0.75rem;
+
+            border-radius: 7px;
+      }
+
+      .card-supervisor{
+            border-top: 3px solid var(--Cyan);
+      }
+
+      .card-builder{
+            border-top: 3px solid var(--Red);
+      }     
+
+      .card-karma{
+            border-top: 3px solid var(--Orange)
+      }
+
+      .card-calculator{
+            border-top: 3px solid var(--Blue);
+      }
+
+
+      .card__title{
+            font-size: 1.4rem;
+
+            color: var(--Grey-500);
+      }
+
+      .card__description{
+            color: var(--Grey-400)
+      }
+
+
+      
+
+      .card__img-container{
+            margin-top: 1rem;
+            display: flex;
+
+            justify-content: flex-end;
+      }
+
+
+
+@media(min-width: 950px){
+
+      header{
+            align-items: center;
+      }
+
+      .header__description{
+            max-width: 50%;
+      }
+
+
+
+
+
+
+      main{
+            padding: 0 2vw;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+
+             grid-template-areas:
+                  ".        builder     ."
+                  "supervisor builder calculator"
+                  "supervisor karma    calculator"
+                  ".        karma       .";
+
+      }
+
+      .card-supervisor{
+            grid-area: supervisor;
+      }
+
+      .card-builder{
+            grid-area: builder;
+      }
+
+      .card-karma{
+            grid-area: karma;
+      }
+
+      .card-calculator{
+            grid-area: calculator;
+      }
+}
+
+
+
+@media(max-width: 949px) and (min-width: 600px){
+
+       main{
+            padding: 0 2vw;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+
+             grid-template-areas:
+                  "supervisor supervisor karma karma"
+                  "supervisor supervisor karma karma"
+                  "builder builder calculator calculator"
+                  "builder builder calculator calculator";
+
+      }
+
+
+      .card-supervisor{
+            grid-area: supervisor;
+      }
+
+      .card-builder{
+            grid-area: builder;
+      }
+
+      .card-karma{
+            grid-area: karma;
+      }
+
+      .card-calculator{
+            grid-area: calculator;
+      }
+
+}
